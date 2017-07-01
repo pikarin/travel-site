@@ -1,0 +1,16 @@
+/*Jangan edit modules/_sprite.scss karena filenya digenerate secara otomatis oleh Gulp.
+Silahkan edit gulp/templates/sprite*/
+
+{{#shapes}}
+{{#first}}
+  .icon {
+    background-image: url('/images/sprite/css/{{{sprite}}}');
+  }
+{{/first}}
+
+  .icon--{{base}} {
+    width: {{width.outer}}px;
+    height: {{height.outer}}px;
+    background-position: {{position.relative.xy}};
+  }
+{{/shapes}}
