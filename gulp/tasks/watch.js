@@ -6,6 +6,10 @@ gulp.task('cssInject', ['sass'], function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('scriptsRefresh', ['scripts'], function() {
+    browserSync.reload();
+});
+
 gulp.task('watch', function() {
     browserSync.init({
         notify: false,
@@ -22,4 +26,8 @@ gulp.task('watch', function() {
         .on('change', function(event) {
           console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
         });
+
+    gulp.watch('assets/scripts/**/*.js', function() {
+        gulp.start('scriptsRefresh');
+    });
 });
