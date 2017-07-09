@@ -6,6 +6,9 @@ Silahkan edit gulp/templates/sprite*/
   .icon {
     background-image: url('/images/sprite/css/{{{sprite}}}');
   }
+  .no-svg .icon {
+    background-image: url('/images/sprite/css/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
+  }
 {{/first}}
 
   .icon--{{base}} {
